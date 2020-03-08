@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BOMDemo</title>
+    <style>
+        .bb{
+            display: block;
+            width: 100px;
+            height: 100px;
+            margin-left: auto;
+            margin-right: auto;
+            color: white;
+            background-color: black;
+            font-size: larger;
+            margin-top: 40px;
+            font-weight: bolder;
+            font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
+        }
+        .dcc{
+            display: block;
+            text-align: center;
+            height: 50px;
+            background-color: rgba(230,244,33,0.39);
+        }
+    </style>
+</head>
+<body>
+<button class="bb" id="bb" onclick="f()">请选择</button>
+<p id="pp" align="center">hahaha</p>
+<div class="dcc">
+    <input type="text" id="ii" size="50">
+    <button id="iidd">关闭循环定时器</button>
+</div>
+<script>
+    window.setTimeout("f1()",2000);
+    window.defaultStatus="hello";
+    console.log(window.closed);
+    console.log(window.defaultStatus);
+    function f() {
+        var c = window.confirm("确定吗？");
+        if(c){
+            window.alert("您选择了对");
+        }else {
+            window.alert("您选择了错");
+            setTimeout("alert('hahahah')",3000);
+
+        }
+    }
+    function f1() {
+        var cc = window.prompt("输个数呗，兄弟","呵呵");
+        if(cc!=null && cc!=''){
+            window.document.getElementById("pp").innerHTML="输入的是"+cc;
+        }
+    }
+    // window.document.getElementById(bb).onclick=f();
+    //循环定时器
+    function f2() {
+        var t = new Date();
+        document.getElementById("ii").value=t;
+    }
+    setInterval("f2()",2000);
+    // document.getElementById()
+</script>
+</body>
+</html>

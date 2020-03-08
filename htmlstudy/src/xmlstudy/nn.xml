@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='utf-8'  ?>
+<students>
+    <student number="s001" >
+        <name>sss</name>
+        <age>dd</age>
+        <sex>ddd</sex>
+    </student>
+    <student number="s002">
+        <name>ddd</name>
+        <age>dd</age>
+        <sex>sddf</sex>
+    </student>
+</students>

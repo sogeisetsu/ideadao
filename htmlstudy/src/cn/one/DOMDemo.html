@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOMDemo</title>
+    <style>
+        .aa{
+            margin: 0 auto;
+            display: block;
+            width: 200px;
+            /*height: 200px;*/
+            text-align: center;
+        }
+        .cc{
+            margin: auto;
+            display: block;
+            margin-top: 5px;
+        }
+        #demo{
+            text-align: center;
+            padding-left: 10px;
+            height: 30px;
+            width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+    </style>
+</head>
+<body>
+   <h1 align="center">时间是多少？</h1>
+   <div class="aa">
+        <button  onclick='document.getElementById("demo").innerHTML=Date()' class="cc">现在是</button>
+       <button  onclick='document.getElementById("demo").style.backgroundColor="#c27c88"' class="cc">改颜色</button>
+   </div>
+   <h4 id="demo"></h4>
+<script>
+
+</script>
+</body>
+</html>

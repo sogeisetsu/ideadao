@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p align="center" id="aa">hello world</p>
+</body>
+<script>
+    // window.alert("hhhhh");
+    document.getElementById("aa").innerHTML = 4 + 19;
+    var ca = 12;
+    var bb = "hello";
+    console.log(ca);
+    document.write("<h1>"+ca+bb+"</h1>");
+    function hahah(msg) {
+        if(hahah.arguments.length===1){
+            document.write(msg);
+        }else{
+            document.write("<br>"+"error");
+        }
+    }
+    hahah(); //undefined
+    hahah("<br>"+"cn.suyuansheng","jjj");
+    console.log(">-------------------------------")
+    //条件和循环
+    for(var i=0;i<10;i++){
+        console.log(i+"<br>");
+    }
+    console.log(">------------------------");
+    const cc = [1,2,3,"1234"];
+    for (let b in cc){
+        console.log(cc[b]);
+    }
+    console.log(">------------------");
+    cc.name="name";
+    console.log("foreach")
+    cc.forEach((dd)=>{
+        console.log(dd);
+    });
+    //对象
+    function Ball(bvalue,bname) {//es5
+        //这其实是构造方法
+        this.value=bvalue;
+        this.name=bname;
+        this.toString = function () {//这是构造方法中定义的方法，可以通过Ball的实例对象来获取，可以叫他实例方法
+            return this.name+"\t"+this.value;
+        }
+    }
+    Ball.prototype={//这里面定义实例方法和实例属性
+        constructor:Ball,//构造方法指向Ball
+        name:"hahah",//和构造方法冲突的时候，以构造方法中的实例属性为准
+        hello:function () {
+            return "jjkkjk";
+        },
+        mldn:"dffd"//实例属性
+    };
+    Ball.print=function() {//es5定义静态方法
+        console.log("Ball的静态属性")
+    };
+    console.log(Ball.prototype.constructor === Ball);
+    bb =  new Ball(12.3,"篮球");
+    console.log("bb.toString()  :"+bb.toString());
+    console.log("bb.name  :"+bb.name);
+    console.log("Ball.prototype.name  :"+Ball.prototype.name);
+    console.log("bb.hello()  :"+bb.hello());
+    // console.log("Ball.staticii  :"+Ball.staticii);
+    console.log(bb.mldn);
+    console.log(bb.hello()+"\t"+bb.name);
+    class Man{//es6
+        constructor(name,age) { //构造方法只能有一个
+            this.name=name;
+            this.age=age;
+        }
+        // constructor() {
+        //     this.name="小刘";
+        //     this.age=13;
+        // }
+        kk="123";
+        toSting=function () {
+            document.write(this.name+"\t"+this.age);
+        };
+        static print=function () {
+            console.log("呵呵");
+        };
+    }
+    console.log(">--------------------------");
+    nn = new Man("李",35);
+    console.log("nn.kk"+nn.kk);
+    nn.toSting();
+    Man.print();
+    Ball.print();
+</script>
+</html>

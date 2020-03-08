@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM深入</title>
+    <style>
+        .dd{
+            display: block;
+            width: 200px;
+            height: 200px;
+            margin: 0 auto;
+            border-color: red;
+            border-style: dashed;
+            margin-top: 20px;
+        }
+        #div3{
+            width: 30px;
+            height: 30px;
+            border: 2px dashed rgba(93,244,218,0.39);
+            background-color: rgba(158,244,133,0.61);
+        }
+    </style>
+</head>
+<body>
+<div class="dd" id="one">
+
+</div>
+<div class="dd" id="two" >
+
+</div>
+<div class="dd" id="three">
+
+</div>
+<input type="button" id="xx" value="增加子节点">
+<input type="button" id="x" value="删除子节点">
+<script>
+    //获取Element对象的几种方式
+    var cc=document.getElementsByClassName("dd");
+    cc=document.getElementsByName("div");
+    cc=document.getElementsByTagName("div");
+    console.log(cc.length);
+    cc[1].innerHTML="<p>"+"hello world"+"</p>";
+    //通过调用DOM对象来设置style属性
+    document.getElementById("one").setAttribute("style","background-color: black");
+    document.getElementById("two").setAttribute("style","background-color: red");
+    document.getElementById("three").setAttribute("style","background-color: blue");
+    function bian() {
+        document.getElementById("one").removeAttribute("style");
+    }
+    window.setTimeout("bian()",3000);
+    function zngjia() {//增加子节点的方法
+        var divthree = document.getElementById("three");
+        var div3 = document.createElement("div");//创建element
+        div3.setAttribute("id","div3");//指定element的属性
+        divthree.appendChild(div3);
+    }
+    document.getElementById("xx").onclick=function () {
+        zngjia();//点击按钮增加子节点
+    };
+    document.getElementById("x").onclick=function () {//点击按钮删除子节点
+        console.log(document.getElementById("div3"));
+        document.getElementById("three").removeChild(document.getElementById("div3"));//删除子节点
+    };
+</script>
+</body>
+</html>
+

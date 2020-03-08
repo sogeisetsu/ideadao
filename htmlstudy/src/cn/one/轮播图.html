@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>轮播图</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        #lu-img{
+            width: 100%;
+        }
+    </style>
+    <script>
+
+    </script>
+</head>
+<body>
+<img src="../../img/banner_1.jpg" id="lu-img">
+<div>
+    <button class="his" id="his" onclick="opene()">打开</button>
+    <button id="pro" onclick="pre()">history</button>
+    <button id="shuxin" onclick="shuxin()">刷新</button>
+    <button id="lujing"> 获取当前路径 </button>
+</div>
+<script>
+    var number =1;
+    function lunbo() {
+        if(number>3){
+            number=1;
+        }
+        document.getElementById("lu-img").src="../../img/banner_"+number+".jpg";
+        number++;
+    }
+    window.setInterval("lunbo()",3000);
+    function opene() {
+        window.open("https://www.baidu.com/","_self");
+    }
+    function pre() {
+        history.forward();
+    }
+    // document.getElementById("his").onclick=opene();
+    //location
+    function shuxin() {
+        location.reload();
+    }
+    //获取路径
+    document.getElementById("lujing").onclick=function () {
+        alert(location.href);
+    }
+
+</script>
+</body>
+</html>

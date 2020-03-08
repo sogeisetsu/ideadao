@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>倒计时跳转</title>
+    <style>
+        #lun{
+            width: 100%;
+        }
+        body{
+            margin: 0;
+        }
+        #waring,.warning{
+            text-align: center;
+            font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
+            font-weight: bold;
+            font-size: 2.5rem;
+            margin-top: 40px;
+        }
+        .warning{
+            color: red;
+            font-family: "Microsoft YaHei UI", Menlo, Consolas, "Courier New", monospace;
+            font-size: large;
+        }
+        #time_out{
+            color: red;
+            font-weight: bolder;
+        }
+        #d_out{
+            display: block;
+            width: 100px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 40px;
+            color: white;
+            background-color: black;
+            font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
+            font-weight: bolder;
+        }
+    </style>
+</head>
+<body>
+<img src="../../img/banner_1.jpg" id="lun"/>
+<p class="warning">页面不存在</p>
+<p id="waring">
+    <span id="time_out">5</span>s后将跳转到其他页面……
+</p>
+<button id="d_out">直接跳转</button>
+<script>
+    var out_by_time=5;//倒计时起始值
+    function out_time() {
+        out_by_time--;
+        if(out_by_time==0){
+            out();//跳转的方法
+        }
+        document.getElementById("time_out").innerHTML=out_by_time;
+    }
+    function out() {//跳转方法
+        window.open("https://www.baidu.com/","_self");
+    }
+    var number =1;//图片编号起始值
+    window.setInterval("out_time()",1000);//倒计时实现
+    function lunhuan() {//改变图片编号的方法
+        number++;
+        if(number>3){
+            number=1;
+        }
+        document.getElementById("lun").src="../../img/banner_"+number+".jpg";
+    }
+    window.setInterval("lunhuan()",1500);//循环播放图片
+    document.getElementById("d_out").onclick=function () {//按下按钮直接跳转
+        location.href="https://www.baidu.com/";
+    }
+</script>
+</body>
+</html>
